@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20sp">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tip Time"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="#000000"
+        android:textColor="@color/white"
+        android:paddingLeft="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    <EditText
+        android:id="@+id/plain_txt_input"
+        android:layout_width="wrap_content"
+        android:ems="8"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="number"
+        android:hint="Cost of Service"/>
+
+    <TextView
+        android:id="@+id/serviceQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How was the service?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plain_txt_input"/>
+
+    <RadioGroup
+        android:id="@+id/tip_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/serviceQuestion"
+        tools:ignore="MissingConstraints">
+
+    <RadioButton
+        android:id="@+id/radio_btn_amazing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amazing(20%)" />
+
+    <RadioButton
+        android:id="@+id/radio_btn_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good(18%)" />
+
+    <RadioButton
+        android:id="@+id/radio_btn_okay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Okay(15%)" />
+    </RadioGroup>
+
+    <Switch
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Round up tip?"
+        android:id="@+id/round_up_switch"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tip_options"
+        app:layout_constraintTop_toBottomOf="@+id/tip_options"
+
+        />
+
+
+    <Button
+        android:id="@+id/calculate_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:textSize="20sp"
+        android:backgroundTint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_up_switch"/>
+
+    <TextView
+        android:id="@+id/tip_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculate_btn"
+        android:text="Tip Amount"
+        android:textAlignment="textEnd"
+/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
